@@ -4,14 +4,11 @@
     {
         private static readonly Random Random = new Random();
         private readonly int _correctNumber;
-        private readonly List<Guess> _guesses;
-        public Guess[] Guesses => _guesses.ToArray();
-        public bool IsSolved => _guesses.Count > 0 && _guesses.Last().Feedback == Feedback.Correct;
+        public bool IsSolved { get; private set; }
 
         public Game()
         {
             _correctNumber = Random.Next(1, 100);
-            _guesses = new List<Guess>();
         }
 
         public Feedback Guess(int number)
@@ -20,8 +17,7 @@
                 number == _correctNumber ? Feedback.Correct :
                 number > _correctNumber ? Feedback.TooHigh :
                 Feedback.TooLow;
-            var guess = new Guess(number, feedback);
-            _guesses.Add(guess);
+            IsSolved = feedback == Feedback.Correct; 
             return feedback;
         }
     }
