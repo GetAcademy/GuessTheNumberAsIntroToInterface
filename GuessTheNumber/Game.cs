@@ -2,13 +2,13 @@
 {
     class Game
     {
-        private static readonly Random Random = new Random();
         private readonly int _correctNumber;
         public bool IsSolved { get; private set; }
 
         public Game()
         {
-            _correctNumber = Random.Next(1, 100);
+            var random = new Random();
+            _correctNumber = random.Next(1, 100);
         }
 
         public Feedback Guess(int number)

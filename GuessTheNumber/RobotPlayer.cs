@@ -1,6 +1,6 @@
 ﻿namespace GuessTheNumber
 {
-    internal class RobotPlayer
+    internal class RobotPlayer : IPlayer
     {
         private int _min;
         private int _max;
