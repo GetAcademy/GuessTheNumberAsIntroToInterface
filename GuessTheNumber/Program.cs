@@ -1,10 +1,17 @@
 ﻿using GuessTheNumber;
 
+/*
+ * Enkelt eksempel på interface
+ * Dependency inversion principle
+ * Ev. dependency injection
+ * Oversikt over innholdet på Moodle
+ */
+
 var game = new Game();
+var player = new Player(game);
 while (!game.IsSolved)
 {
-    Console.Write("Tipp et tall: ");
-    var number = Convert.ToInt32(Console.ReadLine());
+    var number = player.Guess();
     var feedback = game.Guess(number);
     var feedbackText = feedback switch
     {
