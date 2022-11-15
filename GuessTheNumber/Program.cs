@@ -8,7 +8,7 @@
  */
 
 var game = new Game();
-var player = new Player(game);
+var player = new HumanPlayer();
 while (!game.IsSolved)
 {
     var number = player.Guess();
@@ -20,4 +20,5 @@ while (!game.IsSolved)
         Feedback.TooLow => "For lavt",
     };
     Console.WriteLine(feedbackText);
+    //player.ReceiveFeedback(feedback, number);
 }

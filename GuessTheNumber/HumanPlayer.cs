@@ -1,14 +1,7 @@
 ﻿namespace GuessTheNumber
 {
-    internal class Player
+    internal class HumanPlayer
     {
-        private readonly Game _game;
-
-        public Player(Game game)
-        {
-            _game = game;
-        }
-
         public int Guess()
         {
             Console.Write("Tipp et tall: ");
